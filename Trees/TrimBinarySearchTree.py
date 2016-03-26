@@ -82,4 +82,5 @@ j.right = k
 
 #a.postorder()
 
-trimBST(a,5,13)
+new = trimBST(a,5,13)
+new.postorder()
