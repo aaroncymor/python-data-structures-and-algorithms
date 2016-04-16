@@ -3,7 +3,7 @@ array to be sorted = [45,67,23,45,21,24]
 sublistcount = len(arr) / 2 = 6 / 2 = 3
 
 #Step 1
-while sublistcount(3) > 0:
+while sublistcount or 3 > 0:
 	
 	#Step 1.1
 	for start or 0 in [0,1,2]: #range(sublistcount or 3)
@@ -15,7 +15,7 @@ while sublistcount(3) > 0:
 			position = i or 3
 	
 			#Step 1.1.1.1
-			while position or 3 >= gap or 3 and arr[position-gap(0)] or 45 > currentvalue or 45: False
+			while (position or 3 >= gap or 3) and (arr[position - gap(3-3=0)] or 45 > currentvalue or 45): False
 			Then
 			arr[position(3)] = currentvalue or 45 #[45,67,23,45,21,24] or No Change
 
@@ -29,13 +29,13 @@ while sublistcount(3) > 0:
 			position = i or 4
 		
 			#Step 1.2.1.1
-			while position or 4 >= gap or 3 and arr[position-gap(1)] or 67 > currentvalue or 21: True
+			while position or 4 >= gap or 3 and arr[position - gap(1)] or 67 > currentvalue or 21: True
 			Then
-				arr[position(4)] = arr[position-gap(1)] or 67 #[45,67,23,45,67,24]
+				arr[position(4)] = arr[position - gap(1)] or 67 #[45,67,23,45,67,24]
 				position = position - gap or 4 - 3 = 1
 			
 			#Step 1.2.1.2
-			while position or 1 >= gap or 3 and arr[position-gap(-2)] or Null > currentvalue 21: False
+			while position or 1 >= gap or 3 and arr[position - gap(-2)] or Null > currentvalue 21: False
 			Then
 			arr[position(1)] = currentvalue or 21 #[45,21,23,45,67,24]
 
@@ -73,13 +73,13 @@ while sublistcount(1) > 0:
 			position = i or 1
 			
 			#Step 2.1.1.1
-			while position or 1 >= gap or 1 and arr[position-gap(0)] or 45 > currentvalue or 21: True
+			while position or 1 >= gap or 1 and arr[position - gap(1-1=0)] or 45 > currentvalue or 21: True
 			Then
 				arr[position(1)] = arr[position-gap(0)] or 45 #[45,45,23,45,67,24]
 				position = position - gap = 1 - 1 or 0
 
 			#Step 2.1.1.2
-			while position or 0 >= gap or 1 and arr[position-gap(-1)] or Null > currenvalue or 21: False
+			while position or 0 >= gap or 1 and arr[position - gap(0-1=-1)] or Null > currentvalue or 21: False
 			Then
 			arr[position(0)] = currentvalue or 21 #[21,45,23,45,67,24]
 		
@@ -90,13 +90,13 @@ while sublistcount(1) > 0:
 			position = 2
 			
 			#Step 2.1.2.1
-			while position or 2 >= gap or 1 and arr[position-gap(1)] or 45 > currentvalue or 23: True
+			while position or 2 >= gap or 1 and arr[position - gap(2-1=1)] or 45 > currentvalue or 23: True
 			Then
 				arr[position(2)] = arr[position-gap(1)] or 45 #[21,45,45,45,67,24]
 				position = position - gap = 2 - 1 = 1
 			
 			#Step 2.1.2.2
-			while position or 1 >= gap or 1 and arr[position-gap(0)] or 21 > currentvalue or 23: False
+			while position or 1 >= gap or 1 and arr[position - gap(1-1=0)] or 21 > currentvalue or 23: False
 			Then
 			arr[position(1)] = currentvalue or 23 #[21,23,45,45,67,24]
 		
@@ -107,7 +107,7 @@ while sublistcount(1) > 0:
 			position = 3
 
 			#Step 2.1.3.1
-			while position or 3 >= gap or 1 and arr[position-gap(2)] or 45 > currentvalue or 45: False
+			while position or 3 >= gap or 1 and arr[position - gap(3-1=2)] or 45 > currentvalue or 45: False
 			Then
 			arr[position(3)] = currentvalue or 45 #[21,23,45,45,67,24] or No Change
 
@@ -119,7 +119,7 @@ while sublistcount(1) > 0:
 			position = 4
 
 			#Step 2.1.4.1
-			while position or 4 >= gap or 1 and arr[position-gap(3)] or 45 > currentvalue or 67: False
+			while position or 4 >= gap or 1 and arr[position - gap(4-1=3)] or 45 > currentvalue or 67: False
 			Then
 			arr[position(4)] = currentvalue or 67 #[21,23,45,45,67,24] or No Change
 
@@ -130,29 +130,29 @@ while sublistcount(1) > 0:
 			position = 5
 
 			#Step 2.1.4.1
-			while position or 5 >= gap or 1 and arr[position-gap(4)] or 67 > currentvalue or 24: True
+			while position or 5 >= gap or 1 and arr[position - gap(5-1=4)] or 67 > currentvalue or 24: True
 			Then
-				arr[position(5)]=arr[position-gap(4)] or 67 #[21,23,45,45,67,67]
+				arr[position(5)]=arr[position - gap(5-1=4))] or 67 #[21,23,45,45,67,67]
 				position = position - gap = 5 - 1 = 4
 
 			#Step 2.1.4.2
-			while position or 4 >= gap or 1 and arr[position-gap(3)] or 45 > currentvalue or 24: True
+			while position or 4 >= gap or 1 and arr[position - gap(4-1=3)] or 45 > currentvalue or 24: True
 			Then
-				arr[position(4)]=arr[position-gap(3)] or 67 #[21,23,45,45,45,67]
+				arr[position(4)]=arr[position - gap(4-1=3)] or 45 #[21,23,45,45,45,67]
 				position = position - gap = 4 - 1 = 3
 
 
 			#Step 2.1.4.3
-			while position or 3 >= gap or 1 and arr[position-gap(2)] or 45 > currentvalue or 24: True
+			while position or 3 >= gap or 1 and arr[position - gap(3-1=2)] or 45 > currentvalue or 24: True
 			Then
-				arr[position(3)]=arr[position-gap(2)] or 67 #[21,23,45,45,45,67]
+				arr[position(3)]=arr[position - gap(3-1=2)] or 45 #[21,23,45,45,45,67]
 				position = position - gap = 3 - 1 = 2
 
 
 			#Step 2.1.4.4
-			while position or 2 >= gap or 1 and arr[position-gap(1)] or 23 > currentvalue or 24: False
+			while position or 2 >= gap or 1 and arr[position - gap(2-1=1)] or 23 > currentvalue or 24: False
 			Then
-			arr[position] = currentvalue [21,23,24,45,45,67] #array already sorted at this point but still needs to go to outer whileloop
+			arr[position(2)] = currentvalue or 24 #[21,23,24,45,45,67] array already sorted at this point but still needs to go to outer whileloop
 
 	sublistcount = soublistcount / 2 = 1 / 2 = 0
 
