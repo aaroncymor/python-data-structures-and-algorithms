@@ -1,0 +1,297 @@
+array to be sorted = [5,3,2,4,1]
+
+quick_sort([5,3,2,4,1]): #quick_sort(arr)
+	
+	Step 1: quick_sort_help([5,3,2,4,1],0,len(arr)-1) #quick_sort_help(arr,first,last)
+	
+		arr = [5,3,2,4,1]
+		first = 0
+		last = len(arr) is 5 - 1 = 4
+
+		if first or 0 < last or 4: True
+		Then
+			splitpoint = partition([5,3,2,4,1],0,4) #partition(arr,first,last)	
+	
+	Step 1.1 partition([5,3,2,4,1],0,4) #partition(arr,first,last)
+		 
+		pivotvalue = arr[first(0)] or 5
+		
+		leftmark = first or 0 + 1 = 1
+		rightmark = last or 4
+
+		done = False
+		
+		### Parent or Main While loop ###
+		Step 1.1.1
+		
+		while not done(not False) or True:
+		Then
+			### First Child While Loop ###
+			arr = [5,3,2,4,1]
+			leftmark = 1
+			rightmark = 4
+			Step 1.1.1.1 
+			while leftmark or 1 <= rightmark or 4 and arr[leftmark(1)] or 3 <= pivotvalue 5: True
+			Then
+				leftmark = leftmark(1) + 1 = 2
+
+			Step 1.1.1.2 
+			arr = [5,3,2,4,1]
+			leftmark = 2
+			rightmark = 4
+
+			while leftmark or 2 <= rightmark or 4 and arr[leftmark(2)] or 2 <= pivotvalue 5: True
+			Then
+				leftmark = leftmark(2) + 1 = 3
+
+			Step 1.1.1.3 
+			arr = [5,3,2,4,1]
+			leftmark = 3
+			rightmark = 4
+
+			while leftmark or 3 <= rightmark or 4 and arr[leftmark(3)] or 4 <= pivotvalue 5: True
+			Then
+				leftmark = leftmark(3) + 1 = 4
+
+			Step 1.1.1.4 
+			arr = [5,3,2,4,1]
+			leftmark = 4
+			rightmark = 4
+
+			while leftmark or 4 <= rightmark or 4 and arr[leftmark(4)] or 1 <= pivotvalue 5: True
+			Then
+				leftmark = leftmark(4) + 1 = 5
+
+			Step 1.1.1.5 
+			arr = [5,3,2,4,1]
+			leftmark = 5
+			rightmark = 4
+
+			while leftmark or 5 <= rightmark or 4 and arr[leftmark(5)] or Null <= pivotvalue 5: False
+			Then proceed to 2nd while loop
+
+			### Second Child While Loop ###
+			arr = [5,3,2,4,1]
+			leftmark = 5
+			rightmark = 4
+
+			while arr[rightmark(4)] or 1 >= pivotvalue or 5 and rightmark(4) >= leftmark(5): False
+			Then Proceed To Child If Condition
+
+			### Child If Else ###
+
+			if rightmark or 4 < leftmark or 5: True
+			Then
+				done = True
+			Skip Else
+
+		Step 1.1.2
+
+		done = True
+		
+		while not done(not True) or False:
+		Then End Parent While Loop
+
+		#[5,3,2,4,1]
+		temp = arr[first or 0] or 5
+		arr[first] = arr[rightmark(4)] or 1 #[1,3,2,4,1]
+		arr[rightmark(4)] = temp or 5 #[1,3,2,4,5]
+		
+		return rightmark or 4
+
+		### Going back to splitpoint variable ###
+		splitpoint = 4 #after that long partition function process :'(
+		
+		### RECURSION 1 INCOMING! ###
+		
+		Step 2: quick_sort_help([1,3,2,4,5],0,4-1 or 3) #quick_sort_help(arr,first,splitpoint-1)
+		
+		arr = [1,3,2,4,5]
+		first = 0
+		last = 3
+
+		if 0 < 3: True
+		Then
+
+			splitpoint = partition([1,3,2,4,5],0,3) #partition(arr,first,last)
+
+			Step 2.1: partition([1,3,2,4,5],0,3) #partition(arr,first,last)
+
+				pivotvalue = arr[first(0)] or 1
+				
+				leftmark = first + 1 or 0 + 1 = 1
+				righmark = last or 3
+
+				done = False:
+				
+				Step 2.1.1
+				
+				### Parent While Loop ###
+
+				while not done (not False) or True: True
+				Then
+				
+					### First Child While Loop ###
+
+					Step 2.1.1.1
+				
+					arr = [1,3,2,4,5]
+					leftmark = 1
+					rightmark = 3
+
+					while leftmark or 1 <= rightmark or 3 and arr[leftmark(1)] 3 <= pivotvalue or 1: False
+					Then Proceed to Second Child While Loop
+					
+					### Second Child While Loop ###
+
+					Step 2.1.1.2					
+
+					arr = [1,3,2,4,5]
+					leftmark = 1
+					rightmark = 3
+
+					while arr[rightmark(3)] or 4 >= pivotvalue or 1 and rightmark or 3 >= leftmark or 1: True
+					Then
+						rightmark = rightmark - 1 or 3 - 1 or 2
+					
+					Step 2.1.1.3
+
+					arr = [1,3,2,4,5]
+					leftmark = 1
+					rightmark = 2
+
+					while arr[rightmark(2)] or 2 >= pivotvalue or 1 and rightmark or 2 >= leftmark or 1: True
+					Then
+						rightmark = rightmark - 1 or 2 - 1 or 1
+
+					
+					Step 2.1.1.4
+
+					arr = [1,3,2,4,5]
+					leftmark = 1
+					rightmark = 1
+
+					while arr[rightmark(1)] or 3 >= pivotvalue or 1 and rightmark or 1 >= leftmark or 1: True
+					Then
+						rightmark = rightmark - 1 or 1 - 1 or 0
+
+
+					Step 2.1.1.5
+
+					arr = [1,3,2,4,5]
+					leftmark = 1
+					rightmark = 0
+
+					while arr[rightmark(0)] or 1 >= pivotvalue or 1 and rightmark or 0 >= leftmark or 1: False
+					Then Proceed to Child If Else Statement
+
+
+					### Child If Else Statement ###
+
+					Step 2.1.1.6
+
+					if rightmark or 0 < leftmark or 1: True
+					Then
+						done = True
+					Skip Else
+
+				
+				Step 2.1.2
+
+				done = True
+				
+				### Parent While Loop ###
+
+				while not done (not True) or False: False
+				Then
+					End Parent While Loop
+
+
+				temp = arr[first(0)] or 1
+				arr[first(0)] = arr[rightmark(0)] or 1
+				arr[rightmark] = temp or 1 #[1,3,2,4,5]
+
+				return rightmark or 0
+
+		### Going back to splitpoint variable ###
+		
+		splitpoint = 0
+
+		Step 3: quick_sort_help([1,3,2,4,5],0,0-1=-1) #quick_sort_help(arr,first,splitpoint-1)
+				
+		arr = [1,3,2,4,5]
+		first = 0
+		last = -1
+
+		if first or 0 < last or -1: False
+
+		Step 4: quick_sort_help([1,3,2,4,5],1,0) #quick_sort_help(arr,splitpoint+1,last)
+				
+		arr = [1,3,2,4,5]
+		first = 1
+		last = 0
+
+		if first or 1 < last or 0: False
+
+		### Going back to part where split point was 4 ###
+		Step 5: quick_sort_help([1,3,2,4,5],1,3) #quick_sort_help(arr,splitpoint+1,last)
+
+		arr = [1,3,2,4,5]
+		first = 1
+		last = 3
+
+		if first or 1 < last or 3: True
+		Then
+
+			splitpont = partition([1,3,2,4,5],1,3) #partition(arr,first,last)
+
+		
+			Step 5.1: splitpont = partition([1,3,2,4,5],1,3) #partition(arr,first,last)
+		
+			pivotvalue = arr[first(1)] = 3
+			leftmark = first + 1 or 1 + 1 = 2
+			rightmark = last or 3
+
+			done = False
+	
+				### Parent While Loop ###
+				
+				Step 5.1.1
+
+				arr = [1,3,2,4,5]
+
+				while not done (not False) or True: True
+				Then
+				
+					### First Child While Loop ###
+				
+					Step 5.1.1.1
+					while leftmark or 2 <= rightmark or 3 and arr[leftmark(2)] or 2 <= pivotvalue or 3: True
+					Then
+						leftmark = leftmark + 1 or 2 + 1 = 3
+
+					Step 5.1.1.2
+					while leftmark or 3 <= rightmark or 3 and arr[leftmark(3)] or 4 <= pivotvalue or 3: False
+					Then Proceed with Second Child While Loop
+
+					### Second Child While Loop ###
+				
+					Step 5.1.1.3
+					while arr[rightmark(3)] or 4 >= pivotvalue or 3 and rightmark or 3 >= leftmark or 3: True
+					Then
+						rightmark = righmtmark-1 or 3 - 1 = 2
+
+					if rightmark or 2 < leftmark or 3: True
+					Then
+						done = True
+
+				Step 5.1.2
+
+				while not done (not True) or False: False
+				Then
+
+				temp = arr[first(1)] = 3
+				arr[first(1)] = arr[rightmark(2)] or 2 #[1,2,2,4,5]
+				arr[rightmark(2)] = temp or 3 #[1,2,3,4,5]
+	
+ARRAY ALREADY SORTED!
