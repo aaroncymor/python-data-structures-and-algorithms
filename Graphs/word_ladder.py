@@ -17,7 +17,7 @@ class Vertex(object):
         return self.connectedTo[nbr]
 
     def __str__(self):
-        return str(self.id) + 'connected to: ' + str([x.id for x in self.connectedTo])
+        return str(self.id) + ' connected to: ' + str([x.id for x in self.connectedTo])
 
 class Graph(object):
 
@@ -77,4 +77,10 @@ def buildGraph(wordFile):
             for word2 in d[bucket]:
                 if word1 != word2:
                     g.addEdge(word1,word2)
-    return g
+    return g,d
+
+g,d = buildGraph("words.txt")
+
+print d
+for i in g:
+    print i

@@ -1,0 +1,146 @@
+graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+start = 'A'
+goal = 'F'
+
+Step 1
+	Step 1.1 
+	graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+	queue = [('A',['A'])]
+	while queue or [('A',['A'])]: True
+		(vertex, path) = queue.pop(0) or ('A',['A']) # queue now []
+
+		Step 1.1.1
+		#graph[vertex or 'A'] - set(path or ['A']) = set(['B','C']) - set(['A']) = set(['B','C'])
+		for next or 'B' or in set(['B','C']):
+			if next or 'B' == goal or 'F': False
+			Then
+				queue.append((next, path + [next])) #queue.append(('B',['A'] + ['B'])) or [('B',['A','B'])]
+				#queue = [('B',['A','B'])]
+		Step 1.1.2
+		for next or 'C' in set(['C']):
+			if next or 'C' == goal or 'F': False
+			Then
+				queue.append((next, path + [next])) #queue.append(('C',['A'] + ['C'])) or [('C',['A','C'])]
+				#queue = [('B',['A','B']), ('C',['A','C'])]
+		Step 1.1.3
+			for next or None in set([]):
+				Then go back to outer loop, while
+
+	Step 1.2
+	graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+
+    queue = [('B',['A','B']), ('C',['A','B','C'])]
+
+    while queue or [('B',['A','B']), ('C',['A','C'])]: True
+    	(vertex, path) = queue.pop(0) #('B',['A','B']), queue now [('C',['A','C'])]
+
+    	Step 1.2.1
+    	#graph[vertex or 'B'] - set(path or ['A','B']) = set(['A','D','E']) - set(['A','B']) = set(['D','E'])
+
+    	for next or 'D' in set(['D','E']):
+    		if next or 'D' == goal or 'F': False
+    		Then
+    			queue.append((next,path + [next])) # queue.append(('D',['A','B'] + ['D']))
+    			#queue = [('C',['A','C']),('D',['A','B','D'])]
+
+    	Step 1.2.2
+
+    	for next or 'E' in set(['E']):
+    		if next or 'E' == goal or 'F': False
+    		Then
+    			queue.append((next,path + [next])) # queue.append(('E',['A','B']+ ['E']))
+    			#queue = [('C',['A','C']),('D',['A','B','D']),('E',['A','B','E'])]
+
+    	Step 1.2.2
+    	for next or None in set([]):
+    		Then go back to outer loop, while
+
+    Step 1.3
+	graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+
+    queue = [('C',['A','C']),('D',['A','B','D']),('E',['A','B','E'])]
+
+    while queue or [('C',['A','C']),('D',['A','B','D']),('E',['A','B','E'])]: True
+    Then
+    	(vertex, path) = queue.pop(0) #('C',['A','C']), queue now [('D',['A','B','D']),('E',['A','B','E'])]
+
+    	Step 1.3.1
+    	#graph[vertex or 'C'] - set(path or ['A','B','C']) or set(['A','F']) - set(['A','C']) = set(['F'])
+    	for next or 'F' in set(['F']):
+    		if next or 'F' == goal: True
+    		Then
+    			*yield ['A','C'] + ['F'] or ['A','C','F'] #Answer No. 1, Note that the 1st answer is always the shortest path
+
+    	Step 1.3.2
+    	for next or None in set([]):
+    		Then go to outer loop, while
+
+    Step 1.4
+	graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+
+    queue = [('D',['A','B','D']),('E',['A','B','E'])]
+
+    while queue or [('D',['A','B','D']),('E',['A','B','E'])]: True
+    Then
+    	(vertex, path) = queue.pop(0) #('D',['A','B','D']), queue now [('E',['A','B','E'])]
+    	
+    	Step 1.4.1
+    	#graph[vertex or 'D'] - set(path or ['A','B','D']) or set(['B']) - set(['A','B','D']) = set([])
+    	for next or None in set([]):
+    	Then go to outer loop, while
+
+    Step 1.5
+	graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+
+    queue = [('E',['A','B','E'])]
+
+    while queue or [('E',['A','B','E'])]: True
+    Then
+    	(vertex, path) = queue.pop(0) #('E',['A','B','E']), queue now []
+    	Step 1.5.1
+    	#graph[vertex or 'E'] - set(path or ['A','B','E']) or set(['B','F']) - set(['A','B','E']) = set(['F'])
+   		for next or 'F' in set(['F']):
+    		if next or 'F' == goal: True
+    		Then
+    			*yield ['A','B','E'] + ['F'] or ['A','B','E','F'] #Answer No. 2
+
+    	Step 1.5.2
+   		for next or None in set([]):
+   			Then go to outer loop, while
+
+   	Step 1.6
+   		while queue or []: False
+   		Then end loop
+
+
+ANSWER (*yield) = ['A','C','F'] and ['A','B','E','F']

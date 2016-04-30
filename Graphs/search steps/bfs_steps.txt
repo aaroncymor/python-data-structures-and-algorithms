@@ -1,0 +1,152 @@
+Step 1
+
+graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+start = 'A'
+
+visited = set()
+queue = ['A'] #[start]
+
+	Step 1.1
+	graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}	
+	queue = ['A']
+	visited = set()
+
+	while queue or ['A']: True
+	Then
+		vertex = queue.pop(0) or 'A' #Pop first element, queue now []
+		if vertex or 'A' not in visited or set(): True
+			Then
+				visited.add('A') #set(['A'])
+				queue.extend(graph[vertex or 'A'] or set(['B', 'C']) - visited or set(['A'])) # queue = ['B','C']
+	
+	Step 1.2
+	graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}	
+	queue = ['B','C']
+	visited = set(['A'])
+
+	while queue or ['B', 'C']: True
+	Then
+		vertex = queue.pop(0) or 'B' #Pop first element, queue now ['C']
+		if vertex or 'B' not in visited or set(['A']): True
+		Then
+			visited.add(vertex or 'B') #set(['A','B'])
+			queue.extend(graph[vertex or 'B'] or set(['A','D','E']) - visited or set(['A','B'])) #queue = ['C','D','E']
+
+
+	Step 1.3
+	graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}	
+    queue = ['C','D','E'])
+    visited = set(['A','B'])
+
+    while queue or ['C','D','E']: True
+    Then
+    	vertex = queue.pop(0) or 'C' #queue now ['D','E']
+    	if vertex or 'C' not in visited or set(['A','B']): True
+    	Then
+    		visited.add(vertex or 'C') #set(['A','B','C'])
+    		queue.extend(graph[vertex or 'C'] or set(['A','F']) - visited or set(['A','B','C'])) #queue = ['D','E','F']
+
+    Step 1.4
+	graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+    queue = ['D','E','F']
+    visited = set(['A','B','C'])
+
+    while queue or ['D','E','F']: True
+    Then
+    	vertex = queue.pop(0) or 'D' #queue now ['E','F']
+    	if vertex 'D' not in visited or set(['A','B','C']): True
+    	Then
+    		visited.add([vertex or 'D']) #set(['A','B','C','D'])
+    		queue.extend(graph[vertex or 'D'] or set(['B']) - visited or set(['A','B','C','D'])) #queue = ['E','F']
+
+   Step 1.5
+	graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+    queue = ['E','F']
+    visited = set(['A','B','C','D'])
+
+    while queue or ['E','F']: True
+    Then
+    	vertex = queue.pop(0) or 'E' #queue now ['F']
+    	if vertex or 'E' not in visited or set(['A','B','C','D']): True
+    	Then
+    		visited.add(vertex or 'E') #set(['A','B','C','D','E'])
+    		queue.extend(graph[vertex or 'E'] or set(['B','F']) - visited or set(['A','B','C','D','E'])) #queue = ['F','F']
+
+ 	Step 1.6
+	graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+    queue = ['F','F']
+    visited = set(['A','B','C','D','E'])
+
+    while queue or ['F','F']: True
+    Then
+    	vertex = queue.pop(0) or 'F' #queue now ['F']
+    	if vertex or 'F' not in visited or set(['A','B','C','D','E']): True
+    	Then
+    		visited.add('F') #set(['A','B','C','D','E','F'])
+    		queue.extend(graph[vertex or 'F'] or set(['C','E']) - visited or set(['A','B','C','D','E','F'])) #queue = ['F']
+
+   Step 1.7
+	graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+    queue = ['F']
+    visited = set(['A','B','C','D','E','F'])
+
+    while queue or ['F']: True
+    	vertex = queue.pop(0) or 'F' #queue now []
+
+    	if vertex or 'F' not in visited or set(['A','B','C','D','E','F']) False
+    	Then pass
+
+   Step 1.8
+	graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+    queue = []
+    visited = set(['A','B','C','D','E','F'])
+
+    while queue or []: False
+    Then end while loop
+
+return visited or set(['A','B','C','D','E','F']) :)
